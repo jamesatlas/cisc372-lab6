@@ -14,7 +14,7 @@ run_particles : particles.exec
 run_test : particles.exec particles_seq
 	$(RUN) particles.exec 32 1 10.0 0.01 2 32 > out1.txt
 	$(RUN) particles_seq 32 1 10.0 0.01 2 32 > out2.txt
-	diff diff -I '.*time.*' out1.txt out2.txt
+	diff -I '.*time.*' out1.txt out2.txt
 
 run_performance : particles.exec
 	$(RUN) particles.exec 1024 1 1.0 0.01 0 128
